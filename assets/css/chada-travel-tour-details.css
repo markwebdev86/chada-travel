@@ -1,0 +1,190 @@
+.chada-travel-tour-details {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: 24px 20px 56px;
+  box-sizing: border-box;
+  color: #202124;
+}
+
+.chada-travel-tour-details__article,
+.chada-travel-tour-details__featured-media,
+.chada-travel-tour-details__section,
+.chada-travel-tour-details__tabs {
+  min-width: 0;
+}
+
+.chada-travel-tour-details__article {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .08);
+  padding-bottom: 30px;
+}
+
+.chada-travel-tour-details__featured-media {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: linear-gradient(135deg, #64748b, #1e293b);
+}
+
+.chada-travel-tour-details__featured-image,
+.chada-travel-tour-details__image-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chada-travel-tour-details__image-placeholder {
+  background: linear-gradient(135deg, #64748b, #1e293b);
+}
+
+.chada-travel-tour-details__header,
+.chada-travel-tour-details__summary,
+.chada-travel-tour-details__section,
+.chada-travel-tour-details__tabs {
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.chada-travel-tour-details__travel-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.chada-travel-tour-details__header {
+  padding-top: 32px;
+}
+
+.chada-travel-tour-details__name {
+  margin: 0;
+  color: #1d395b;
+  font-size: clamp(1.7rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.chada-travel-tour-details__summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin: 24px 0 0;
+  padding-block: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chada-travel-tour-details__summary div {
+  min-width: 0;
+}
+
+.chada-travel-tour-details__summary dt {
+  color: #6b7280;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.chada-travel-tour-details__summary dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.chada-travel-tour-details__section {
+  padding-top: 28px;
+}
+
+.chada-travel-tour-details__section h2 {
+  margin: 0 0 12px;
+  color: #1d395b;
+  font-size: 1.25rem;
+}
+
+.chada-travel-tour-details__section p,
+.chada-travel-tour-details__rich-text {
+  line-height: 1.7;
+}
+
+.chada-travel-tour-details__rich-text > :first-child {
+  margin-top: 0;
+}
+
+.chada-travel-tour-details__rich-text > :last-child {
+  margin-bottom: 0;
+}
+
+.chada-travel-tour-details__date-list,
+.chada-travel-tour-details__file-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.chada-travel-tour-details__tabs {
+  padding-top: 34px;
+}
+
+.chada-travel-tour-details__tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid #d9dee3;
+}
+
+.chada-travel-tour-details__tab {
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #4b5563;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.chada-travel-tour-details__tab[aria-selected="true"] {
+  border-bottom-color: #1d395b;
+  color: #1d395b;
+}
+
+.chada-travel-tour-details__tab:focus-visible,
+.chada-travel-tour-details__file-list a:focus-visible {
+  outline: 2px solid #1d395b;
+  outline-offset: 3px;
+}
+
+.chada-travel-tour-details__panel {
+  padding: 24px 0 4px;
+  line-height: 1.7;
+}
+
+.chada-travel-tour-details__file-list a {
+  color: #1d395b;
+}
+
+@media (min-width: 601px) {
+  .chada-travel-tour-details {
+    padding-inline: 32px;
+  }
+
+  .chada-travel-tour-details__summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chada-travel-tour-details__travel-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 901px) {
+  .chada-travel-tour-details__summary {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chada-travel-tour-details * {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "markwebdev86/chada-travel",
+  "description": "Chada Travel - Agency Manager WordPress plugin",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "brain/monkey": "^2.6",
+    "php-stubs/wordpress-stubs": "^6.6",
+    "phpstan/phpstan": "^1.11",
+    "phpunit/phpunit": "^10.5",
+    "szepeviktor/phpstan-wordpress": "^1.3",
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "CHADA_TRAVEL\\": "includes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CHADA_TRAVEL\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "lint": "phpcs",
+    "analyse": "phpstan analyse --memory-limit=2G",
+    "test": "phpunit",
+    "test:split": "php tests/integration/feature-comparison-runtime.php && php tests/integration/identity-boundary-runtime.php && php tests/integration/compliance-runtime.php && php tests/integration/settings-registration-runtime.php && php tests/integration/runtime-limits-runtime.php && php tests/integration/free-pro-split-runtime.php && php tests/integration/installer-runtime.php",
+    "check": [
+      "@lint",
+      "@analyse",
+      "@test"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  }
+}

@@ -1,0 +1,51 @@
+.chada-travel-tours-admin .chada-travel-tour-form-card,
+.chada-travel-term-form-card { max-width: 980px; margin: 16px 0; padding: 16px; background: #fff; border: 1px solid #dcdcde; }
+.chada-travel-tours-admin .chada-travel-tour-field { margin: 16px 0; }
+.chada-travel-tours-admin .chada-travel-tour-field > label,
+.chada-travel-tours-admin .chada-travel-tour-field > fieldset > legend { display: block; margin-bottom: 6px; }
+.chada-travel-tours-admin .chada-travel-tour-date-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.chada-travel-tours-admin .chada-travel-tour-date-row input[type="date"] { min-width: 150px; }
+.chada-travel-tours-admin .chada-travel-tour-media { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.chada-travel-tours-admin .chada-travel-tour-media img { width: 120px; height: 120px; object-fit: cover; border: 1px solid #dcdcde; }
+.chada-travel-tours-admin .chada-travel-tour-checkboxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.chada-travel-tours-admin .chada-travel-tour-content { padding: 10px; border: 1px solid #dcdcde; background: #f6f7f7; }
+.chada-travel-tours-admin #chada-travel-tour-tour_name,
+.chada-travel-tours-admin #chada-travel-tour-tour_code,
+.chada-travel-tours-admin #chada-travel-tour-price { padding: 0 12px; min-height: 40px; width: 100%; box-sizing: border-box; }
+.chada-travel-tours-admin .chada-travel-tour-url-control { display: flex; align-items: center; gap: 0; max-width: 100%; }
+.chada-travel-tours-admin .chada-travel-tour-url-prefix,
+.chada-travel-tours-admin .chada-travel-tour-url-suffix { padding: 0 8px; min-height: 40px; display: inline-flex; align-items: center; background: #f6f7f7; border: 1px solid #8c8f94; color: #50575e; white-space: nowrap; }
+.chada-travel-tours-admin .chada-travel-tour-url-prefix { border-right: 0; }
+.chada-travel-tours-admin .chada-travel-tour-url-suffix { border-left: 0; }
+.chada-travel-tours-admin #chada-travel-tour-tour_slug { flex: 1 1 auto; min-height: 40px; width: 100%; box-sizing: border-box; border-radius: 0; }
+.chada-travel-tours-admin .chada-travel-tour-url-open { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; margin-left: 8px; }
+.chada-travel-tours-admin .chada-travel-tour-url-open[hidden],
+.chada-travel-tours-admin #chada-travel-tour-url-preview[hidden] { display: none; }
+.chada-travel-tours-admin .chada-travel-tour-url-field .description { overflow-wrap: anywhere; }
+.chada-travel-tours-admin .chada-travel-tour-form-card[hidden] { display: none; }
+.chada-travel-tours-admin .chada-travel-tour-grid-image img { display: block; width: 50px; height: 50px; object-fit: cover; border: 1px solid #dcdcde; }
+.chada-travel-tours-admin .chada-travel-row-number-column,
+.chada-travel-term-admin .chada-travel-row-number-column { width: 3.5rem; white-space: nowrap; }
+.chada-travel-tours-admin tr.chada-travel-tour-row--selected,
+.chada-travel-term-admin tr.chada-travel-tour-row--selected { background-color: #dcdcde; }
+.chada-travel-tours-admin tr.chada-travel-tour-row--selected > td,
+.chada-travel-term-admin tr.chada-travel-tour-row--selected > td { background-color: #dcdcde !important; }
+.chada-travel-tours-admin .chada-travel-tour-name-link { font-weight: 600; }
+.chada-travel-tours-admin .chada-travel-tour-editor-control[hidden],
+.chada-travel-tours-admin .chada-travel-tour-editor-preview[hidden] { display: none; }
+.chada-travel-tours-admin .chada-travel-tour-files-field #chada-travel-tour-files { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: chada-travel-tour-file; }
+.chada-travel-tours-admin .chada-travel-tour-file-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; counter-increment: chada-travel-tour-file; }
+.chada-travel-tours-admin .chada-travel-tour-file-row::before { content: counter(chada-travel-tour-file) "."; font-weight: 600; }
+.chada-travel-tours-admin .chada-travel-tour-file-row a { overflow-wrap: anywhere; }
+.chada-travel-tours-admin .chada-travel-tour-files-actions { display: flex; align-items: center; gap: 8px; }
+.chada-travel-tours-admin .chada-travel-tour-metadata { margin: 20px 0 16px; padding: 12px 16px; border-top: 1px solid #dcdcde; background: #f6f7f7; }
+.chada-travel-tours-admin .chada-travel-tour-metadata[hidden] { display: none; }
+.chada-travel-tours-admin .chada-travel-tour-metadata-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.chada-travel-tours-admin .chada-travel-tour-metadata-field label { font-weight: 600; }
+.chada-travel-tours-admin .chada-travel-tour-metadata-field input { width: 100%; max-width: 420px; }
+.chada-travel-term-admin #chada-travel-term-name { padding: 0 12px; min-height: 40px; width: 100%; box-sizing: border-box; }
+.chada-travel-inline-form { display: inline; }
+.chada-travel-confirmation-modal { position: fixed; inset: 0; z-index: 100000; }
+.chada-travel-confirmation-modal__backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, .55); }
+.chada-travel-confirmation-modal__dialog { position: relative; max-width: 520px; margin: 15vh auto 0; padding: 20px; background: #fff; box-shadow: 0 5px 30px rgba(0, 0, 0, .35); }
+.chada-travel-confirmation-modal[hidden] { display: none; }

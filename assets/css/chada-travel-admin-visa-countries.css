@@ -1,0 +1,12 @@
+.chada-travel-country-status-badge{display:inline-block;padding:2px 10px;border-radius:10px;background:#f0f0f1;font-weight:600;}
+.chada-travel-country-media{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.chada-travel-country-media-name{min-width:180px;max-width:40ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.chada-travel-country-media-preview{display:inline-flex;align-items:center;justify-content:center;min-width:60px;min-height:60px;}
+.chada-travel-country-media-preview[hidden]{display:none;}
+.chada-travel-country-media-preview-image{display:block;width:60px;height:60px;max-width:60px;max-height:60px;object-fit:contain;}
+.chada-travel-country-guide-thumbnail{display:block;width:35px;height:35px;object-fit:cover;border-radius:3px;}
+.chada-travel-country-form{max-width:640px;padding:16px;margin:16px 0;}
+.chada-travel-country-filters{display:flex;gap:8px;align-items:center;}
+.chada-travel-inline-form{display:inline;}
+.chada-travel-field-error{color:#b32d2e;}
+#chada-travel-country-rows tr[hidden]{display:none;}
