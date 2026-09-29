@@ -1,0 +1,1308 @@
+.chada-travel-app,
+.chada-travel-app * {
+  box-sizing: border-box;
+}
+
+.chada-travel-app {
+  container-name: chada-travel-checkout;
+  container-type: inline-size;
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-background);
+  font-family: var(--chada-travel-font-family);
+  font-size: 16px;
+  line-height: 1.45;
+  width: 100%;
+  /* Override the theme's is-layout-constrained max-width so the checkout app is fluid,
+     sized only by its wrapper/container rather than the theme's content-size cap. */
+  max-width: 100% !important;
+}
+
+.chada-travel-app button,
+.chada-travel-app input,
+.chada-travel-app select,
+.chada-travel-app textarea {
+  color: inherit;
+  font: inherit;
+}
+
+.chada-travel-app button:focus-visible,
+.chada-travel-app input:focus-visible,
+.chada-travel-app select:focus-visible,
+.chada-travel-app textarea:focus-visible,
+.chada-travel-app a:focus-visible {
+  outline: var(--chada-travel-focus-width) solid var(--chada-travel-color-focus);
+  outline-offset: 2px;
+}
+
+.chada-travel-site-heading {
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+}
+
+.chada-travel-site-heading__inner,
+.chada-travel-progress,
+.chada-travel-screen,
+.chada-travel-app-footer {
+  width: calc(100% - calc(var(--chada-travel-space-unit) * 4));
+  max-width: var(--chada-travel-container-width);
+  margin-inline: auto;
+}
+
+.chada-travel-site-heading__inner {
+  display: flex;
+  align-items: center;
+  min-height: 74px;
+}
+
+.chada-travel-site-heading h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.chada-travel-brand-link {
+  color: var(--chada-travel-color-foreground);
+  text-decoration: none;
+}
+
+.chada-travel-brand-link:hover,
+.chada-travel-brand-link:focus-visible {
+  text-decoration: underline;
+}
+
+.chada-travel-progress-shell {
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-block: calc(var(--chada-travel-space-unit) * 2.5);
+}
+
+.chada-travel-progress-step {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+}
+
+button.chada-travel-progress-step {
+  cursor: pointer;
+}
+
+.chada-travel-progress-step:not(:last-child)::after {
+  width: 100%;
+  height: 2px;
+  margin-inline: 18px;
+  background: var(--chada-travel-color-border-soft);
+  content: "";
+}
+
+.chada-travel-progress-step__number {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+
+.chada-travel-progress-step__label {
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+button.chada-travel-progress-step:not(.is-active) .chada-travel-progress-step__number {
+  border-color: var(--chada-travel-color-foreground);
+}
+
+span.chada-travel-progress-step .chada-travel-progress-step__number {
+  color: var(--chada-travel-color-muted);
+  border-color: var(--chada-travel-color-border-soft);
+}
+
+.chada-travel-progress-step.is-active .chada-travel-progress-step__number {
+  color: var(--chada-travel-color-primary-foreground);
+  border-color: var(--chada-travel-color-primary);
+  background: var(--chada-travel-color-primary);
+}
+
+.chada-travel-progress-step.is-active .chada-travel-progress-step__label {
+  font-weight: 700;
+}
+
+.chada-travel-screen {
+  padding-block: calc(var(--chada-travel-space-unit) * 4) 40px;
+}
+
+.chada-travel-screen > h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.5rem, 3.6vw, 2.25rem);
+}
+
+.chada-travel-grid-main-aside,
+.chada-travel-form-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.chada-travel-grid-main-aside {
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+}
+
+.chada-travel-grid-main-aside > * {
+  min-width: 0;
+}
+
+.chada-travel-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--chada-travel-space-unit) * 2.5) calc(var(--chada-travel-space-unit) * 3);
+}
+
+.chada-travel-panel {
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  background: var(--chada-travel-color-surface);
+}
+
+.chada-travel-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+}
+
+.chada-travel-panel__header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.chada-travel-panel__body {
+  padding: calc(var(--chada-travel-space-unit) * 3);
+}
+
+.chada-travel-field {
+  display: grid;
+  gap: var(--chada-travel-space-unit);
+  font-weight: 700;
+}
+
+.chada-travel-field--full {
+  grid-column: 1 / -1;
+}
+
+.chada-travel-control {
+  width: 100%;
+  min-height: 48px;
+  padding: calc(var(--chada-travel-space-unit) * 1.5) calc(var(--chada-travel-space-unit) * 2);
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-surface);
+}
+
+textarea.chada-travel-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.chada-travel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: calc(var(--chada-travel-space-unit) * 4);
+  padding-top: 24px;
+  border-top: 1px solid var(--chada-travel-color-border-soft);
+}
+
+.chada-travel-button {
+  min-height: 48px;
+  padding: calc(var(--chada-travel-space-unit) * 1.5) calc(var(--chada-travel-space-unit) * 2.5);
+  border: 1px solid var(--chada-travel-color-foreground);
+  border-radius: var(--chada-travel-control-radius);
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-surface);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--chada-travel-transition-duration) ease, opacity var(--chada-travel-transition-duration) ease;
+}
+
+.chada-travel-button:not(:disabled):hover {
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-app .chada-travel-button--primary {
+  color: var(--chada-travel-color-primary-foreground);
+  background: var(--chada-travel-color-primary);
+}
+
+.chada-travel-app .chada-travel-button--primary:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+.chada-travel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.chada-travel-summary-list {
+  display: grid;
+  gap: calc(var(--chada-travel-space-unit) * 1.5);
+}
+
+.chada-travel-summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--chada-travel-space-unit) * 2);
+  padding-bottom: calc(var(--chada-travel-space-unit) * 1.5);
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+}
+
+.chada-travel-summary-line > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.chada-travel-summary-line:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.chada-travel-summary-line--total {
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.chada-travel-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--chada-travel-color-foreground);
+  border-radius: var(--chada-travel-control-radius);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.chada-travel-notice {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  background: var(--chada-travel-color-surface);
+}
+
+.chada-travel-notice[data-type="success"] {
+  color: var(--chada-travel-color-success);
+}
+
+.chada-travel-notice[data-type="error"] {
+  color: var(--chada-travel-color-danger);
+}
+
+.chada-travel-table-wrap {
+  overflow-x: auto;
+}
+
+.chada-travel-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.chada-travel-table th,
+.chada-travel-table td {
+  padding: 12px;
+  border: 1px solid var(--chada-travel-color-border-soft);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.chada-travel-table th {
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-upload-zone {
+  display: grid;
+  min-height: 190px;
+  padding: 26px;
+  place-items: center;
+  gap: 8px;
+  border: 2px dashed var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  text-align: center;
+  cursor: pointer;
+}
+
+.chada-travel-upload-zone input {
+  max-width: 100%;
+}
+
+.chada-travel-screen-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  color: var(--chada-travel-color-success);
+  font-weight: 700;
+}
+
+.chada-travel-screen-status.is-error {
+  color: var(--chada-travel-color-danger);
+}
+
+.chada-travel-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.chada-travel-check-row {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  gap: calc(var(--chada-travel-space-unit) * 1.5);
+  font-weight: 400;
+}
+
+.chada-travel-check-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.chada-travel-check-row input {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+.chada-travel-help-panel {
+  min-height: 100%;
+}
+
+.chada-travel-help-panel h3 {
+  margin-bottom: 12px;
+}
+
+.chada-travel-cart-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 48px;
+  gap: 8px;
+  margin: -62px 0 20px;
+}
+
+.chada-travel-cart-status__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.chada-travel-country-browser {
+  display: grid;
+  align-items: start;
+  gap: 18px;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.25fr);
+}
+
+.chada-travel-country-browser__status {
+  grid-column: 1 / -1;
+}
+
+/* Stages 2-4 each show their own top-of-content status banner the same way Stage 1 does; this is the shared
+   spacing rule for those three wrapper <div>s. (Stage 1 doesn't need it - .chada-travel-country-browser__status gets its
+   spacing for free from the parent grid's own `gap`.) */
+.chada-travel-stage-status {
+  margin-bottom: calc(var(--chada-travel-space-unit) * 3);
+}
+
+/* The original global status element (bottom of <main>) still receives every announce() write so Stage 5 keeps
+   working from it directly, but while Stages 1-4 each show their own top-of-content status element instead, hide
+   the original then so the same text doesn't render twice on the page at once. #chada-travel-stage-1 through
+   #chada-travel-stage-4 all precede it in document order, so each selector below is a no-op except for whichever one of
+   those stages currently lacks the `hidden` attribute. Stage 5 isn't listed, so the original stays visible exactly
+   as before whenever Stage 5 is active. */
+#chada-travel-stage-1:not([hidden]) ~ [data-chada-travel-live-status],
+#chada-travel-stage-2:not([hidden]) ~ [data-chada-travel-live-status],
+#chada-travel-stage-3:not([hidden]) ~ [data-chada-travel-live-status],
+#chada-travel-stage-4:not([hidden]) ~ [data-chada-travel-live-status] {
+  display: none;
+}
+
+.chada-travel-country-accordion,
+.chada-travel-country-details {
+  min-width: 0;
+}
+
+.chada-travel-country-item h3 {
+  margin: 0;
+}
+
+.chada-travel-app .chada-travel-country-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 9px 12px;
+  border: 1px solid var(--chada-travel-color-background);
+  color: var(--chada-travel-color-primary-foreground);
+  background: var(--chada-travel-color-foreground);
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chada-travel-app .chada-travel-country-toggle[aria-expanded="false"] {
+  border-color: var(--chada-travel-color-border);
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-surface);
+}
+
+[data-chada-travel-stage-one-next] {
+  margin-left: auto;
+}
+
+.chada-travel-country-toggle > span:first-child {
+  flex: 1 1 auto;
+}
+
+.chada-travel-country-toggle__mark {
+  flex: 0 0 auto;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.chada-travel-country-badge {
+  flex: 0 0 auto;
+  min-width: 24px;
+  margin-inline: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-primary-foreground);
+  text-align: center;
+}
+
+.chada-travel-country-guide-panel {
+  padding: calc(var(--chada-travel-space-unit) * 1.5);
+  border: 1px solid var(--chada-travel-color-border);
+  border-top: 0;
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-country-guide-link {
+  display: block;
+  cursor: zoom-in;
+}
+
+.chada-travel-country-guide {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+.chada-travel-country-details {
+  padding: 24px;
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-country-details h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.chada-travel-country-fee {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.chada-travel-country-details__text {
+  min-height: 170px;
+  padding: 16px;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  white-space: normal;
+}
+
+.chada-travel-country-details__text p,
+.chada-travel-country-details__text h1,
+.chada-travel-country-details__text h2,
+.chada-travel-country-details__text h3,
+.chada-travel-country-details__text h4,
+.chada-travel-country-details__text h5,
+.chada-travel-country-details__text h6 {
+  margin: 0 0 12px;
+}
+
+.chada-travel-country-details__text ul,
+.chada-travel-country-details__text ol {
+  margin: 0 0 12px;
+  padding-left: 28px;
+  line-height: 1.35;
+}
+
+.chada-travel-country-details__text li {
+  margin: 0;
+}
+
+.chada-travel-country-details__text strong,
+.chada-travel-country-details__text b {
+  font-weight: 700;
+}
+
+.chada-travel-country-details__text a {
+  color: var(--chada-travel-color-primary);
+  text-decoration: underline;
+}
+
+.chada-travel-country-details__text .alignleft,
+.chada-travel-country-details__text [style*="text-align: left"] {
+  text-align: left;
+}
+
+.chada-travel-country-details__text .aligncenter,
+.chada-travel-country-details__text [style*="text-align: center"] {
+  text-align: center;
+}
+
+.chada-travel-country-details__text .alignright,
+.chada-travel-country-details__text [style*="text-align: right"] {
+  text-align: right;
+}
+
+.chada-travel-country-details__text .alignjustify,
+.chada-travel-country-details__text [style*="text-align: justify"] {
+  text-align: justify;
+}
+
+.chada-travel-country-details__text [style*="padding-left"],
+.chada-travel-country-details__text [style*="margin-left"] {
+  padding-left: 28px;
+}
+
+.chada-travel-country-details__text [style*="font-size"] {
+  line-height: 1.4;
+}
+
+.chada-travel-country-missing {
+  color: var(--chada-travel-color-muted);
+}
+
+.chada-travel-country-guide-download {
+  display: block;
+  margin-top: 10px;
+  color: var(--chada-travel-color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.chada-travel-country-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.chada-travel-quantity-control {
+  display: grid;
+  grid-template-columns: 42px 42px 42px;
+  align-items: center;
+}
+
+.chada-travel-quantity-control button,
+.chada-travel-quantity-control output {
+  display: grid;
+  min-height: 42px;
+  place-items: center;
+  border: 1px solid var(--chada-travel-color-border);
+  background: var(--chada-travel-color-surface);
+  font-weight: 700;
+}
+
+.chada-travel-quantity-control button {
+  cursor: pointer;
+}
+
+.chada-travel-quantity-control button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.chada-travel-summary-table__head,
+.chada-travel-summary-table__row {
+  display: grid;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+  grid-template-columns: minmax(0, 1fr) 74px minmax(100px, auto);
+}
+
+.chada-travel-summary-table__head {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.chada-travel-summary-table__row span:last-child,
+.chada-travel-summary-table__head span:last-child {
+  text-align: right;
+}
+
+.chada-travel-booker-panel {
+  height: 100%;
+}
+
+.chada-travel-applicant-section {
+  margin-top: calc(var(--chada-travel-space-unit) * 4);
+}
+
+.chada-travel-applicant-group {
+  padding: calc(var(--chada-travel-space-unit) * 2);
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-applicant-group > h3 {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--chada-travel-color-border);
+}
+
+.chada-travel-applicant-row {
+  padding: calc(var(--chada-travel-space-unit) * 2) 0;
+  border-bottom: 1px solid var(--chada-travel-color-border);
+}
+
+.chada-travel-applicant-row__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.chada-travel-applicant-row__header h4 {
+  margin: 0;
+}
+
+.chada-travel-applicant-fields {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.chada-travel-add-country-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.chada-travel-confirm-dialog {
+  width: min(520px, calc(100% - 32px));
+  padding: 24px;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  color: var(--chada-travel-color-foreground);
+  background: var(--chada-travel-color-surface);
+}
+
+.chada-travel-confirm-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.chada-travel-confirm-dialog h2 {
+  margin-top: 0;
+}
+
+.chada-travel-applicant-list {
+  display: grid;
+  gap: 20px;
+}
+
+.chada-travel-applicant-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.chada-travel-panel--spaced {
+  margin-top: 20px;
+}
+
+.chada-travel-review-list {
+  display: grid;
+  gap: calc(var(--chada-travel-space-unit) * 1.5);
+  margin: 0;
+}
+
+.chada-travel-review-line {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: calc(var(--chada-travel-space-unit) * 1.5);
+}
+
+.chada-travel-review-line > span:first-child {
+  color: var(--chada-travel-color-muted);
+}
+
+.chada-travel-table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chada-travel-app .chada-travel-button--small {
+  min-height: 38px;
+  padding: 7px 13px;
+  font-weight: 400;
+}
+
+.chada-travel-policy-panel {
+  margin-top: 24px;
+}
+
+.chada-travel-field-error {
+  margin-top: 6px;
+  color: var(--chada-travel-color-danger);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.chada-travel-control[aria-invalid="true"] {
+  border-color: var(--chada-travel-color-danger);
+}
+
+.chada-travel-payment-options {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.chada-travel-payment-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(var(--chada-travel-space-unit) * 2) calc(var(--chada-travel-space-unit) * 2.5);
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  background: var(--chada-travel-color-surface);
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chada-travel-payment-option.is-selected {
+  border-color: var(--chada-travel-color-primary);
+  border-width: 2px;
+}
+
+.chada-travel-payment-option:not(.is-selected):hover {
+  background: var(--chada-travel-color-surface-muted);
+}
+
+.chada-travel-payment-option__mark {
+  display: grid;
+  flex: 0 0 auto;
+  min-width: 40px;
+  padding: 0 8px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+  font-size: 0.85rem;
+}
+
+.chada-travel-payment-option__label {
+  flex: 1 1 auto;
+}
+
+.chada-travel-payment-option__radio {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: 50%;
+}
+
+.chada-travel-payment-option.is-selected .chada-travel-payment-option__radio {
+  border-color: var(--chada-travel-color-primary);
+  border-width: 6px;
+}
+
+.chada-travel-payment-panel[hidden] {
+  display: none;
+}
+
+.chada-travel-key-value {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  margin: 16px 0;
+}
+
+.chada-travel-key-value dt {
+  color: var(--chada-travel-color-muted);
+  font-weight: 700;
+}
+
+.chada-travel-key-value dd {
+  margin: 0;
+}
+
+.chada-travel-bank-account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.chada-travel-bank-account-card {
+  border: 1px solid var(--chada-travel-color-border, #dcdcde);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.chada-travel-bank-account-card h4 {
+  margin: 0 0 8px;
+}
+
+.chada-travel-bank-account-card .chada-travel-key-value {
+  margin: 0;
+}
+
+.chada-travel-button--block {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+
+[data-chada-travel-booking-id] {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.chada-travel-status-note,
+.chada-travel-policy-caption {
+  margin: 12px 0 0;
+  color: var(--chada-travel-color-muted);
+  font-size: 0.9rem;
+}
+
+.chada-travel-status-note.is-error {
+  color: var(--chada-travel-color-danger);
+}
+
+.chada-travel-digital-wallet-layout {
+  display: grid;
+  align-items: start;
+  gap: 20px;
+  margin: 16px 0;
+  grid-template-columns: minmax(160px, 220px) 1fr;
+}
+
+.chada-travel-qr-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: var(--chada-travel-control-radius);
+}
+
+.chada-travel-badge[data-status="awaiting"],
+.chada-travel-badge[data-status="failed"],
+.chada-travel-badge[data-status="rejected"] {
+  color: var(--chada-travel-color-danger);
+  border-color: var(--chada-travel-color-danger);
+}
+
+.chada-travel-badge[data-status="paid"] {
+  color: var(--chada-travel-color-success);
+  border-color: var(--chada-travel-color-success);
+}
+
+.chada-travel-badge[data-status="processing"] {
+  color: var(--chada-travel-color-muted);
+  border-color: var(--chada-travel-color-border);
+}
+
+.chada-travel-instruction-list {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chada-travel-instruction-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+}
+
+.chada-travel-instruction-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--chada-travel-color-border);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.chada-travel-instruction-item h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+
+.chada-travel-instruction-item p {
+  margin: 0;
+  color: var(--chada-travel-color-muted);
+}
+
+.chada-travel-proof-status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+#chada-travel-stage-5 > h2 {
+  text-align: center;
+}
+
+.chada-travel-confirmation-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: calc(var(--chada-travel-space-unit) * 4);
+  padding: calc(var(--chada-travel-space-unit) * 2) calc(var(--chada-travel-space-unit) * 2.5);
+  border: 1px solid var(--chada-travel-color-success);
+  border-radius: var(--chada-travel-control-radius);
+}
+
+.chada-travel-confirmation-banner h3 {
+  margin: 0 0 4px;
+}
+
+.chada-travel-confirmation-banner p {
+  margin: 0;
+  color: var(--chada-travel-color-muted);
+}
+
+.chada-travel-confirmation-banner__check {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--chada-travel-color-primary-foreground);
+  background: var(--chada-travel-color-success);
+  font-size: 1.2rem;
+}
+
+.chada-travel-panel-subheading {
+  margin: 20px 0 12px;
+}
+
+.chada-travel-confirmation-resources {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.chada-travel-disclaimer,
+.chada-travel-legal-footer {
+  margin-top: 24px;
+  color: var(--chada-travel-color-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.chada-travel-app-footer {
+  padding-block: calc(var(--chada-travel-space-unit) * 3) calc(var(--chada-travel-space-unit) * 5);
+  margin-top: calc(var(--chada-travel-space-unit) * 2);
+  border-top: 1px solid var(--chada-travel-color-border-soft);
+  color: var(--chada-travel-color-muted);
+  font-size: 0.875rem;
+}
+
+.chada-travel-company-contact {
+  line-height: 1.6;
+}
+
+.chada-travel-company-contact a {
+  color: inherit;
+}
+
+.chada-travel-requirement-row {
+  display: grid;
+  gap: 18px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--chada-travel-color-border-soft);
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+}
+
+.chada-travel-requirement-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.chada-travel-requirement-row__info p {
+  margin: 6px 0 0;
+  color: var(--chada-travel-color-muted);
+}
+
+.chada-travel-requirement-row__file {
+  font-weight: 700;
+}
+
+.chada-travel-requirement-row__action {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.chada-travel-app--maintenance .chada-travel-screen {
+  max-width: 640px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .chada-travel-confirmation-resources {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-requirement-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .chada-travel-country-browser,
+  .chada-travel-applicant-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-payment-options {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-digital-wallet-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-progress {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .chada-travel-progress-step::after {
+    display: none;
+  }
+
+  .chada-travel-grid-main-aside {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .chada-travel-site-heading__inner,
+  .chada-travel-progress,
+  .chada-travel-screen,
+  .chada-travel-app-footer {
+    width: calc(100% - calc(var(--chada-travel-space-unit) * 3));
+  }
+
+  .chada-travel-progress {
+    display: block;
+  }
+
+  .chada-travel-progress-step {
+    display: none;
+  }
+
+  .chada-travel-progress-step.is-active {
+    display: flex;
+  }
+
+  .chada-travel-progress-step.is-active::after {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-left: 16px;
+    background: transparent;
+    content: attr(data-mobile-label);
+  }
+
+  .chada-travel-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-field--full {
+    grid-column: auto;
+  }
+
+  .chada-travel-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .chada-travel-cart-status {
+    margin: 0 0 16px;
+  }
+
+  .chada-travel-country-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .chada-travel-quantity-control {
+    justify-content: center;
+  }
+
+  .chada-travel-summary-table__head,
+  .chada-travel-summary-table__row {
+    grid-template-columns: minmax(0, 1fr) 60px minmax(90px, auto);
+  }
+
+  .chada-travel-button {
+    width: 100%;
+  }
+
+  .chada-travel-table-actions {
+    flex-direction: column;
+  }
+
+  .chada-travel-applicant-actions {
+    justify-content: stretch;
+  }
+
+  .chada-travel-applicant-actions .chada-travel-button {
+    width: 100%;
+  }
+
+  .chada-travel-instruction-item {
+    grid-template-columns: 28px 1fr;
+  }
+
+  .chada-travel-proof-status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chada-travel-confirmation-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@container chada-travel-checkout (max-width: 900px) {
+  .chada-travel-country-browser,
+  .chada-travel-applicant-fields,
+  .chada-travel-payment-options,
+  .chada-travel-digital-wallet-layout,
+  .chada-travel-grid-main-aside {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-progress {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .chada-travel-progress-step::after {
+    display: none;
+  }
+
+  .chada-travel-confirmation-resources {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-requirement-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@container chada-travel-checkout (max-width: 680px) {
+  .chada-travel-site-heading__inner,
+  .chada-travel-progress,
+  .chada-travel-screen,
+  .chada-travel-app-footer {
+    width: calc(100% - calc(var(--chada-travel-space-unit) * 3));
+  }
+
+  .chada-travel-progress {
+    display: block;
+  }
+
+  .chada-travel-progress-step {
+    display: none;
+  }
+
+  .chada-travel-progress-step.is-active {
+    display: flex;
+  }
+
+  .chada-travel-progress-step.is-active::after {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-left: 16px;
+    background: transparent;
+    content: attr(data-mobile-label);
+  }
+
+  .chada-travel-form-grid,
+  .chada-travel-applicant-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .chada-travel-field--full {
+    grid-column: auto;
+  }
+
+  .chada-travel-actions,
+  .chada-travel-country-controls,
+  .chada-travel-table-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .chada-travel-proof-status,
+  .chada-travel-confirmation-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chada-travel-cart-status {
+    margin: 0 0 16px;
+  }
+
+  .chada-travel-quantity-control {
+    justify-content: center;
+  }
+
+  .chada-travel-summary-table__head,
+  .chada-travel-summary-table__row {
+    grid-template-columns: minmax(0, 1fr) 60px minmax(90px, auto);
+  }
+
+  .chada-travel-button {
+    width: 100%;
+  }
+}

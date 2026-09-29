@@ -1,0 +1,141 @@
+.chada-travel-featured-tours-sidebar {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #333;
+  background: #fff;
+}
+
+.chada-travel-featured-tours-sidebar__list {
+  width: 100%;
+}
+
+.chada-travel-featured-tours-sidebar__item {
+  display: grid;
+  grid-template-columns: minmax(96px, 38%) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #333;
+  background: #fff;
+}
+
+.chada-travel-featured-tours-sidebar__item:first-child {
+  padding-top: 0;
+}
+
+.chada-travel-featured-tours-sidebar__image-link,
+.chada-travel-featured-tours-sidebar__image-frame {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.chada-travel-featured-tours-sidebar__image-frame {
+  aspect-ratio: 137 / 83;
+  background: #333;
+}
+
+.chada-travel-featured-tours-sidebar__image,
+.chada-travel-featured-tours-sidebar__image-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.chada-travel-featured-tours-sidebar__image {
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.chada-travel-featured-tours-sidebar__image-placeholder {
+  background: #333;
+}
+
+.chada-travel-featured-tours-sidebar__image-link:hover .chada-travel-featured-tours-sidebar__image,
+.chada-travel-featured-tours-sidebar__image-link:focus-visible .chada-travel-featured-tours-sidebar__image {
+  transform: scale(1.04);
+}
+
+.chada-travel-featured-tours-sidebar__content {
+  min-width: 0;
+}
+
+.chada-travel-featured-tours-sidebar__name {
+  margin: 0 0 9px;
+  color: #000;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.2;
+}
+
+.chada-travel-featured-tours-sidebar__name-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.chada-travel-featured-tours-sidebar__name-link:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.chada-travel-featured-tours-sidebar__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  color: #333;
+  font-size: .78rem;
+  line-height: 1.3;
+}
+
+.chada-travel-featured-tours-sidebar__meta-item {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 5px;
+}
+
+.chada-travel-featured-tours-sidebar__meta-item > span {
+  overflow-wrap: anywhere;
+}
+
+.chada-travel-featured-tours-sidebar__destination a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.chada-travel-featured-tours-sidebar__destination a:hover,
+.chada-travel-featured-tours-sidebar__destination a:focus-visible {
+  color: #333;
+  text-decoration: none;
+}
+
+.chada-travel-featured-tours-sidebar__icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: #333;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.chada-travel-featured-tours-sidebar__image-link:focus-visible,
+.chada-travel-featured-tours-sidebar__name-link:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .chada-travel-featured-tours-sidebar__item {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chada-travel-featured-tours-sidebar__image {
+    transition: none;
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" role="img" aria-labelledby="title desc">
+  <title id="title">PDF document</title>
+  <desc id="desc">PDF document icon</desc>
+  <rect x="8" y="3" width="44" height="54" rx="3" fill="#fff" stroke="#707070" stroke-width="2"/>
+  <path d="M38 3v13h14" fill="#e8e8e8" stroke="#707070" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M38 3l14 13H38z" fill="#d1d1d1"/>
+  <rect x="5" y="37" width="50" height="17" rx="3" fill="#d63638"/>
+  <text x="30" y="49" fill="#fff" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">PDF</text>
+</svg>

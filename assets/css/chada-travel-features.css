@@ -1,0 +1,114 @@
+.chada-travel-features__table-wrap {
+    max-width: 1120px;
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+.chada-travel-features__table {
+    min-width: 720px;
+    border: 1px solid var(--chada-travel-border);
+    border-spacing: 0;
+}
+
+.chada-travel-features__table--free {
+    min-width: 560px;
+}
+
+.chada-travel-features__table th,
+.chada-travel-features__table td {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
+
+.chada-travel-features__table thead th {
+    background: #f0f0f1;
+    color: #1d2327;
+    font-size: 14px;
+}
+
+.chada-travel-features__table thead th:first-child {
+    width: 76%;
+}
+
+.chada-travel-features__table--free thead th:first-child {
+    width: 82%;
+}
+
+.chada-travel-features__status-column {
+    width: 12%;
+    text-align: center !important;
+}
+
+.chada-travel-features__table--free .chada-travel-features__status-column {
+    width: 18%;
+}
+
+.chada-travel-features__section th {
+    background: #e5e7eb;
+    color: #1d2327;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.chada-travel-features__name,
+.chada-travel-features__description {
+    display: block;
+}
+
+.chada-travel-features__name {
+    color: #1d2327;
+    font-size: 14px;
+}
+
+.chada-travel-features__pro-only-label {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #e5f2fb;
+    color: #0a4b78;
+    font-size: 11px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.chada-travel-features__pro-only .chada-travel-features__status-column:last-child {
+    background: #f0f8ff;
+}
+
+.chada-travel-features__description {
+    margin-top: 4px;
+    color: var(--chada-travel-muted);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.chada-travel-features__status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.chada-travel-features__status.is-available {
+    background: #edfaef;
+    color: #1a7a34;
+}
+
+.chada-travel-features__status.is-unavailable {
+    background: #fcf0f1;
+    color: #b32d2e;
+}
+
+@media (max-width: 782px) {
+    .chada-travel-features__table-wrap {
+        margin-right: -10px;
+    }
+}

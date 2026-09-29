@@ -1,0 +1,503 @@
+/* Shared WordPress administrator styling for Chada Travel - Agency Manager admin screens. Scoped under .chada-travel-admin. */
+
+.chada-travel-admin {
+    --chada-travel-border: #dcdcde;
+    --chada-travel-muted: #646970;
+    --chada-travel-bg-subtle: #f6f7f7;
+    --chada-travel-radius: 4px;
+    --chada-travel-focus: var(--wp-admin-theme-color, #2271b1);
+}
+
+/* WordPress admin's own forms.css sets ".button { display: inline-block; }", which - as an author-stylesheet
+   rule - overrides the browser's default "[hidden] { display: none }" UA rule regardless of selector
+   specificity. Without this, a hidden <button class="button" hidden> (e.g. Add Bank Account, Remove Image)
+   keeps rendering even though its hidden attribute is correctly present. */
+.chada-travel-admin [hidden] {
+    display: none !important;
+}
+
+.chada-travel-admin .chada-travel-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+    margin: 16px 0;
+}
+
+.chada-travel-admin .chada-travel-toolbar label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.chada-travel-admin .chada-travel-toolbar input[type="search"],
+.chada-travel-admin .chada-travel-toolbar select {
+    min-width: 200px;
+}
+
+/* Worklist tab bar shared by Bookings and Booking Detail. */
+.chada-travel-admin .chada-travel-worklist-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-bottom: 1px solid var(--chada-travel-border);
+    margin: 16px 0 0;
+    padding-bottom: 0;
+}
+
+.chada-travel-admin .chada-travel-worklist-tabs a {
+    display: inline-block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: var(--chada-travel-muted);
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: var(--chada-travel-radius) var(--chada-travel-radius) 0 0;
+    font-weight: 500;
+}
+
+.chada-travel-admin .chada-travel-worklist-tabs a[aria-selected="true"] {
+    color: #1d2327;
+    background: #fff;
+    border-color: var(--chada-travel-border);
+    font-weight: 600;
+}
+
+.chada-travel-admin .chada-travel-worklist-tabs a:focus-visible,
+.chada-travel-admin a.chada-travel-tab:focus-visible,
+.chada-travel-admin button.chada-travel-tab:focus-visible {
+    outline: 2px solid var(--chada-travel-focus);
+    outline-offset: 2px;
+}
+
+.chada-travel-admin .chada-travel-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--chada-travel-bg-subtle);
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d2327;
+    white-space: nowrap;
+}
+
+.chada-travel-admin .chada-travel-badge.is-warning { background: #fcf0f1; color: #8a2424; }
+.chada-travel-admin .chada-travel-badge.is-success { background: #edfaef; color: #1a7a34; }
+.chada-travel-admin .chada-travel-badge.is-info { background: #e5f2fb; color: #0a4b78; }
+
+.chada-travel-admin .chada-travel-muted { color: var(--chada-travel-muted); }
+.chada-travel-admin .chada-travel-small { font-size: 12px; font-weight: bold; }
+
+.chada-travel-admin .chada-travel-shortcode-copy-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.chada-travel-admin .chada-travel-copy-shortcode {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    color: var(--chada-travel-focus);
+    cursor: pointer;
+}
+.chada-travel-admin .chada-travel-copy-shortcode:focus-visible {
+    outline: 2px solid var(--chada-travel-focus);
+    outline-offset: 2px;
+}
+.chada-travel-admin .chada-travel-copy-feedback {
+    color: #1a7a34;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Stacks a table cell's primary value above its secondary/muted line (Bookings, Payment Review, and the
+   Dashboard's Latest Bookings/Awaiting Payment Review/Latest Document Uploads previews all reuse this class).
+   Deliberately does not set `display` on the .chada-travel-stack <td> itself - that would override its default
+   table-cell display and break the row's column layout. Stacking the cell's own direct children instead
+   achieves the same look without touching how the <td> participates in the table. */
+.chada-travel-admin .chada-travel-stack > * { display: block; }
+.chada-travel-admin .chada-travel-stack > * + * { margin-top: 2px; }
+
+/* Draft label */
+.chada-travel-admin .chada-travel-draft-label { font-style: italic; color: var(--chada-travel-muted); }
+
+/* Booking Detail header */
+.chada-travel-admin .chada-travel-breadcrumb { font-size: 13px; color: var(--chada-travel-muted); margin-bottom: 4px; }
+.chada-travel-admin .chada-travel-detail-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+.chada-travel-admin .chada-travel-detail-title { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.chada-travel-admin .chada-travel-detail-title h1 { margin: 0; }
+.chada-travel-admin .chada-travel-detail-meta { color: var(--chada-travel-muted); font-size: 13px; margin-top: 4px; }
+
+/* Four-step workflow progress */
+.chada-travel-admin .chada-travel-progress {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 16px 0;
+}
+.chada-travel-admin .chada-travel-progress-step {
+    position: relative;
+    text-align: center;
+    padding-top: 34px;
+    font-size: 12px;
+    color: var(--chada-travel-muted);
+}
+.chada-travel-admin .chada-travel-progress-step::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--chada-travel-border);
+}
+.chada-travel-admin .chada-travel-progress-step:first-child::before { left: 50%; }
+.chada-travel-admin .chada-travel-progress-step:last-child::before { right: 50%; }
+.chada-travel-admin .chada-travel-progress-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--chada-travel-bg-subtle);
+    color: var(--chada-travel-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 1;
+}
+.chada-travel-admin .chada-travel-progress-step.is-complete .chada-travel-progress-marker,
+.chada-travel-admin .chada-travel-progress-step.is-current .chada-travel-progress-marker {
+    background: var(--chada-travel-focus);
+    color: #fff;
+}
+.chada-travel-admin .chada-travel-progress-step.is-complete,
+.chada-travel-admin .chada-travel-progress-step.is-current { color: #1d2327; font-weight: 600; }
+
+/* Tabs (role=tablist / role=tab / role=tabpanel) */
+.chada-travel-admin .chada-travel-tablist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-bottom: 1px solid var(--chada-travel-border);
+    margin: 8px 0 0;
+}
+.chada-travel-admin .chada-travel-tab {
+    background: none;
+    border: 1px solid transparent;
+    border-bottom: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--chada-travel-muted);
+    border-radius: var(--chada-travel-radius) var(--chada-travel-radius) 0 0;
+    text-decoration: none;
+    display: inline-block;
+}
+.chada-travel-admin .chada-travel-tab[aria-selected="true"] {
+    background: #fff;
+    border-color: var(--chada-travel-border);
+    color: #1d2327;
+    font-weight: 600;
+}
+.chada-travel-admin .chada-travel-tabpanel {
+    background: #fff;
+    border: 1px solid var(--chada-travel-border);
+    border-top: none;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+.chada-travel-admin .chada-travel-tabpanel[hidden] { display: none; }
+
+.chada-travel-admin .chada-travel-section { margin-bottom: 24px; }
+.chada-travel-admin .chada-travel-section h2 { font-size: 14px; margin: 0 0 8px; }
+
+.chada-travel-admin .chada-travel-applicant-edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 10px;
+    background: #f6f7f7;
+    border: 1px solid var(--chada-travel-border);
+}
+.chada-travel-admin .chada-travel-applicant-edit-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.chada-travel-admin .chada-travel-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.chada-travel-admin .chada-travel-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+    font-size: 13px;
+}
+.chada-travel-admin .chada-travel-detail-grid dt { color: var(--chada-travel-muted); font-weight: 600; }
+.chada-travel-admin .chada-travel-detail-grid dd { margin: 0 0 8px; }
+
+.chada-travel-admin .chada-travel-deposit-slip-preview-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 240px;
+    margin: 12px 0 20px;
+    padding: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: var(--chada-travel-bg-subtle);
+    border: 1px solid var(--chada-travel-border);
+    border-radius: var(--chada-travel-radius);
+}
+.chada-travel-admin .chada-travel-deposit-slip-preview {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 640px;
+    object-fit: contain;
+}
+.chada-travel-admin .chada-travel-deposit-slip-preview[hidden] { display: none; }
+.chada-travel-admin .chada-travel-deposit-slip-preview-fallback { margin: 0; }
+
+.chada-travel-admin .chada-travel-tags-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0; }
+.chada-travel-admin .chada-travel-tag-remove-form { display: inline; }
+.chada-travel-admin .chada-travel-tag-remove-form button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0 0 0 4px;
+    font-size: 12px;
+}
+
+/* Dashboard summary cards */
+.chada-travel-admin .chada-travel-dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 16px 0 24px;
+}
+.chada-travel-admin .chada-travel-dashboard-card {
+    background: #fff;
+    border: 1px solid var(--chada-travel-border);
+    border-radius: var(--chada-travel-radius);
+    padding: 16px;
+}
+.chada-travel-admin .chada-travel-dashboard-card-label {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--chada-travel-muted);
+}
+.chada-travel-admin p.chada-travel-dashboard-card-value {
+    margin: 0 0 4px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1d2327;
+    line-height: 1.2;
+}
+.chada-travel-admin ul.chada-travel-dashboard-card-value {
+    margin: 0 0 4px;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d2327;
+}
+.chada-travel-admin ul.chada-travel-dashboard-card-value li { line-height: 1.4; }
+.chada-travel-admin .chada-travel-dashboard-card-secondary {
+    margin: 0 0 12px;
+    font-size: 12px;
+    color: var(--chada-travel-muted);
+}
+.chada-travel-admin .chada-travel-dashboard-card-link {
+    font-size: 13px;
+    text-decoration: none;
+}
+.chada-travel-admin .chada-travel-dashboard-card-link:focus-visible {
+    outline: 2px solid var(--chada-travel-focus);
+    outline-offset: 2px;
+}
+
+/* Dashboard period selector - reuses the existing .chada-travel-toolbar layout/spacing used by Bookings/Payment Review. */
+.chada-travel-admin .chada-travel-dashboard-period-form { margin-top: 0; }
+
+/* Dashboard Attention Required */
+.chada-travel-admin .chada-travel-dashboard-attention-list {
+    margin: 8px 0 24px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.chada-travel-admin .chada-travel-dashboard-attention-list li {
+    background: #fcf0f1;
+    border: 1px solid #f5c2c7;
+    border-radius: var(--chada-travel-radius);
+}
+.chada-travel-admin .chada-travel-dashboard-attention-list a {
+    display: block;
+    padding: 8px 14px;
+    color: #8a2424;
+    text-decoration: none;
+    font-size: 13px;
+}
+.chada-travel-admin .chada-travel-dashboard-attention-list a:focus-visible {
+    outline: 2px solid var(--chada-travel-focus);
+    outline-offset: 2px;
+}
+
+/* Dashboard basic statistics: Booking Status, Applications by Country, Payments by Method */
+.chada-travel-admin .chada-travel-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 8px;
+}
+.chada-travel-admin .chada-travel-dashboard-stat-panel { margin-bottom: 0; }
+.chada-travel-admin .chada-travel-dashboard-bar-list {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.chada-travel-admin .chada-travel-dashboard-bar-item {
+    display: grid;
+    grid-template-columns: minmax(90px, 1fr) 2fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 12px;
+}
+.chada-travel-admin .chada-travel-dashboard-bar-label {
+    color: var(--chada-travel-muted);
+    overflow-wrap: anywhere;
+}
+.chada-travel-admin .chada-travel-dashboard-bar-track {
+    background: var(--chada-travel-bg-subtle);
+    border-radius: var(--chada-travel-radius);
+    height: 8px;
+    overflow: hidden;
+}
+.chada-travel-admin .chada-travel-dashboard-bar-fill {
+    background: var(--chada-travel-focus);
+    height: 100%;
+}
+.chada-travel-admin .chada-travel-dashboard-bar-value {
+    font-weight: 600;
+    color: #1d2327;
+    white-space: nowrap;
+}
+
+/* Dashboard Setup & System Status */
+.chada-travel-admin .chada-travel-dashboard-status-list {
+    margin: 8px 0 16px;
+    padding: 0;
+    list-style: none;
+}
+.chada-travel-admin .chada-travel-dashboard-status-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--chada-travel-bg-subtle);
+    font-size: 13px;
+}
+.chada-travel-admin .chada-travel-dashboard-status-list li:last-child { border-bottom: none; }
+
+div#chada-travel-country-form {
+	max-width: 800px !important;
+}
+div#chada-travel-country-form input[type='text'],
+div#chada-travel-country-form input[type='number'],
+div#chada-travel-country-form textarea
+{
+	width: 100%;
+}
+div#chada-travel-country-form span.chada-travel-country-media-preview img.step-by-step-guide {
+	border: 1px solid #CCC;
+}
+
+#toplevel_page_chada-travel-dashboard .wp-submenu a[href*="page=chada-travel-tour-destinations"],
+#toplevel_page_chada-travel-dashboard .wp-submenu a[href*="page=chada-travel-tour-types"] {
+    padding-left: 26px;
+}
+
+#toplevel_page_chada-travel-dashboard .wp-submenu a[href*="page=chada-travel-payment-review"],
+#toplevel_page_chada-travel-dashboard .wp-submenu a[href*="page=chada-travel-visa-countries"] {
+    padding-left: 26px;
+}
+
+#toplevel_page_chada-travel-dashboard .wp-submenu a[href*="page=chada-travel-record-grid-library"] .chada-travel-record-grid-menu-item {
+    display: inline-block;
+    padding-left: 14px;
+}
+
+/* Responsive: WordPress admin narrow widths */
+@media (max-width: 782px) {
+    .chada-travel-admin .chada-travel-two-col,
+    .chada-travel-admin .chada-travel-detail-grid,
+    .chada-travel-admin .chada-travel-progress,
+    .chada-travel-admin .chada-travel-dashboard-cards,
+    .chada-travel-admin .chada-travel-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    .chada-travel-admin .chada-travel-dashboard-bar-item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+    .chada-travel-admin .chada-travel-toolbar input[type="search"],
+    .chada-travel-admin .chada-travel-toolbar select {
+        min-width: 0;
+        width: 100%;
+    }
+    .chada-travel-admin .chada-travel-deposit-slip-preview-wrapper { min-height: 160px; padding: 8px; }
+    .chada-travel-admin .chada-travel-deposit-slip-preview { max-height: 360px; }
+    .chada-travel-admin table.wp-list-table thead { display: none; }
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table,
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table tbody,
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table tr,
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table td {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+    }
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table tr {
+        margin-bottom: 12px;
+        border: 1px solid var(--chada-travel-border);
+    }
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table td {
+        border: none;
+        border-bottom: 1px solid var(--chada-travel-bg-subtle);
+    }
+    .chada-travel-admin table.wp-list-table.chada-travel-responsive-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 600;
+        font-size: 11px;
+        color: var(--chada-travel-muted);
+        margin-bottom: 2px;
+    }
+}
